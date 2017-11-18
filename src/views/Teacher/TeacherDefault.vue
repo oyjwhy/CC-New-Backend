@@ -48,29 +48,28 @@
           <span style="font-size: 20px;">当前课程信息</span>
         </div>
        <el-table
-        :data="tableData"
+        :data="tableDataCourse"
         stripe
         style="width: 100%">
         <el-table-column
-          prop="CourseName"
           label="课程名称"
           align="center"
-          width="140">
+          width="180">
           <template slot-scope="scope">
-            <span class="course-name" style="color:red">{{scope.row.CourseName}}</span><br>
-            <span class="course-name">{{scope.row.TeacherName}}</span>
+            <a href="#" class="course-name" style="color:red">{{scope.row.CourseName}}</a><br>
+            <a href="#" class="course-name">{{scope.row.TeacherName}}</a>
           </template>
         </el-table-column>
         <el-table-column
           prop="StudentNum"
           label="学生数"
           align="center"
-          width="80">
+          width="100">
         </el-table-column>
         <el-table-column
           label="名单"
           align="center"
-          width="80">
+          width="100">
           <template slot-scope="scope">
             <el-button
               type="text">
@@ -79,9 +78,13 @@
           </template>
         </el-table-column>
         <el-table-column
-          prop="CourseDocuments"
           label="讲稿"
-          align="center">
+          align="center"
+          width="100">
+          <template slot-scope="scope">
+            <a href="#" class="course-name" style="color:#698B69">上传{{scope.row.CourseDocumentsUp}}</a><br>
+            <a href="#" class="course-name" style="color:#6A5ACD">下载{{scope.row.CourseDocumentsDown}}</a>
+          </template>
         </el-table-column>
         <el-table-column
           prop="HomeWorks"
@@ -89,29 +92,58 @@
           align="center">
         </el-table-column>
       </el-table>
-      </el-card>      
+      </el-card>
 
-      <!-- <el-table
-        :data="tableData"
+
+      <div class="separate-line"></div>
+
+      <el-card class="box-card">
+        <div slot="header" class="clearfix">
+          <span style="font-size: 20px;">研究生指导</span>
+        </div>
+       <el-table
+        :data="tableDataStudent"
         stripe
-        style="width: 100%">
+        border
+        style="width: 99%">
         <el-table-column
-          prop="date"
-          label="日期"
-          width="180">
+          prop="StudentNo"
+          label="学号"
+          align="center">
         </el-table-column>
         <el-table-column
-          prop="name"
-          label="姓名"
-          width="180">
+          prop="StudentName"
+          label="名字"
+          align="center">
         </el-table-column>
         <el-table-column
-          prop="address"
-          label="地址">
+          prop="StudentLeve"
+          label="层次"
+          align="center">
         </el-table-column>
-      </el-table> -->
-
-
+        <el-table-column
+          prop="StudentGrade"
+          label="年纪"
+          align="center">
+        </el-table-column>
+        <el-table-column
+          prop="StudentSex"
+          label="性别"
+          align="center">
+        </el-table-column>
+        <el-table-column
+          prop="MajorName"
+          label="专业"
+          align="center"
+          width="240">
+        </el-table-column>
+        <el-table-column
+          prop="StudentCondition"
+          label="状态"
+          align="center">
+        </el-table-column>
+      </el-table>
+      </el-card>   
     </div>
 </template>
 
@@ -125,34 +157,103 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      tableData: [{
+      tableDataCourse: [{
         CourseName: '综合课程2-2',
         TeacherName: '温延龙[1班]',
         StudentNum: '74',
         StudentList: '查看',
-        CourseDocuments: '上传 0 下载 0',
+        CourseDocumentsUp: '0',
+        CourseDocumentsDown: '0',
         HomeWorks: '布置作业'
       }, {
         CourseName: '信息检索系统原理',
         TeacherName: '温延龙[1班]',
         StudentNum: '104',
         StudentList: '查看',
-        CourseDocuments: '上传 5 下载 426',
+        CourseDocumentsUp: '5',
+        CourseDocumentsDown: '426',
         HomeWorks: '布置作业'
       }, {
         CourseName: '信息检索',
         TeacherName: '温延龙[1班]',
         StudentNum: '74',
         StudentList: '查看',
-        CourseDocuments: '上传 0 下载 0',
+        CourseDocumentsUp: '0',
+        CourseDocumentsDown: '0',
         HomeWorks: '布置作业'
       }, {
         CourseName: '现代信息检索',
         TeacherName: '温延龙[1班]',
         StudentNum: '13',
         StudentList: '查看',
-        CourseDocuments: '上传 5 下载 66',
+        CourseDocumentsUp: '5',
+        CourseDocumentsDown: '66',
         HomeWorks: '布置作业'
+      }],
+      tableDataStudent: [{
+        StudentLeve: '硕士',
+        MajorName: '计算机科学与技术',
+        StudentGrade: '2014',
+        StudentNo: '0123456789',
+        StudentName: '张三',
+        StudentSex: '男',
+        StudentCondition: '本院在学'
+      }, {
+        StudentLeve: '专业硕士',
+        MajorName: '计算机科学与技术',
+        StudentGrade: '2015',
+        StudentNo: '0123456789',
+        StudentName: '李四',
+        StudentSex: '男',
+        StudentCondition: '本院在学'
+      }, {
+        StudentLeve: '工程硕士',
+        MajorName: '计算机科学与技术',
+        StudentGrade: '2015',
+        StudentNo: '0123456789',
+        StudentName: '张三',
+        StudentSex: '女',
+        StudentCondition: '本院在学'
+      }, {
+        StudentLeve: '博士',
+        MajorName: '计算机科学与技术',
+        StudentGrade: '2013',
+        StudentNo: '0123456789',
+        StudentName: '张三四五',
+        StudentSex: '女',
+        StudentCondition: '本院在学'
+      }, {
+        StudentLeve: '硕士',
+        MajorName: '计算机科学与技术',
+        StudentGrade: '2014',
+        StudentNo: '0123456789',
+        StudentName: '张三',
+        StudentSex: '男',
+        StudentCondition: '本院在学'
+      }, {
+        StudentLeve: '专业硕士',
+        MajorName: '计算机科学与技术',
+        StudentGrade: '2015',
+        StudentNo: '0123456789',
+        StudentName: '李四',
+        StudentSex: '男',
+        StudentCondition: '本院在学'
+      }, {
+        StudentLeve: '工程硕士',
+        MajorName: '计算机科学与技术',
+        StudentGrade: '2015',
+        StudentNo: '0123456789',
+        StudentName: '张三',
+        StudentSex: '女',
+        StudentCondition: '本院在学'
+      }, {
+        StudentLeve: '博士',
+        MajorName: '计算机科学与技术',
+        StudentGrade: '2013',
+        StudentNo: '0123456789',
+        StudentName: '张三四五',
+        StudentSex: '女',
+        StudentCondition: '本院在学'
       }]
     }
   },
