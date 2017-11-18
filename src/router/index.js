@@ -25,7 +25,7 @@ export default new Router({
       component: News
     },
     {
-      path: '/teacherdefault',
+      path: '/teacher-default',
       name: 'TeacherDefault',
       component: TeacherDefault
     }
