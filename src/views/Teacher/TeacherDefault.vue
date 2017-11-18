@@ -93,6 +93,7 @@ export default {
 .grid-content:hover{
   cursor:pointer;
   background: rgba(135, 206, 235, 0.7);
+  font-weight: bold;
 }
 .row-bg {
   padding: 10px 0;
