@@ -8,11 +8,9 @@
 
 <script>
 export default {
-  name: 'NavigateBar',
+  name: 'PageFooter',
   data () {
-    return {
-      TeacherName: '名字 [name]'
-    }
+    return {}
   },
   methods: {}
 }
@@ -22,10 +20,10 @@ export default {
 <style>
 .page-footer {
   margin-top: 40px;
-  background-color: rgb(65,105,225);
+  background-color: rgba(28, 62, 137, 0.9);
   height: 85px;
   text-align: center;
-  color: rgb(		220,220,220);
+  color: rgb(220, 220, 220);
   font-size: 15px;
 }
 </style>
