@@ -3,6 +3,13 @@
 
     <navigate-bar></navigate-bar>
 
+    <transition name="slide-fade">
+    <manage-teaching v-if="ManageType=='ManageTeaching'"></manage-teaching>
+    <manage-study v-if="ManageType=='ManageStudy'"></manage-study>
+    <manage-academy v-if="ManageType=='ManageAcademy'"></manage-academy>
+    <manage-fee v-if="ManageType=='ManageFee'"></manage-fee>
+    <manage-search-info v-if="ManageType=='ManageSearchInfo'"></manage-search-info>
+    </transition>
     <div class="Breadcrumb">
       <el-breadcrumb style="font-size: 15px;margin-top:10px" separator-class="el-icon-arrow-right">
         <el-breadcrumb-item>首页</el-breadcrumb-item>
@@ -12,7 +19,7 @@
 
       </el-breadcrumb>
 
-      <!-- <el-button @click="changeManageType('Manage')">1</el-button>
+      <el-button @click="changeManageType('Manage')">1</el-button>
       <el-button @click="changeManageType('ManageTeaching')">2</el-button>
       <el-button @click="changeManageType('ManageStudy')">3</el-button>
       <el-button @click="changeManageType('ManageAcademy')">4</el-button>
@@ -20,7 +27,7 @@
       <el-button @click="changeManageType('ManageSearchInfo')">6</el-button>
       <el-button @click="changeManageType('ManageTeaching')">7</el-button>
       <el-button @click="changeManageType('ManageStudy')">8</el-button>
-      <el-button @click="changeManageType('ManageStudy')">9</el-button> -->
+      <el-button @click="changeManageType('ManageStudy')">9</el-button>
 
     </div>
 
@@ -28,13 +35,6 @@
     <manage-panel></manage-panel>
 
 
-    <transition name="slide-fade">
-    <manage-teaching v-if="ManageType=='ManageTeaching'"></manage-teaching>
-    <manage-study v-if="ManageType=='ManageStudy'"></manage-study>
-    <manage-academy v-if="ManageType=='ManageAcademy'"></manage-academy>
-    <manage-fee v-if="ManageType=='ManageFee'"></manage-fee>
-    <manage-search-info v-if="ManageType=='ManageSearchInfo'"></manage-search-info>
-    </transition>
 
     <div class="separate-line"></div>
 
@@ -348,7 +348,7 @@ export default {
   cursor:pointer;
   font-weight: bold;
   color: #4F4F4F;
-  font-size: 18px;
+  font-size: 16px;
 }
 .fade-enter-active {
   transition: opacity 1s
