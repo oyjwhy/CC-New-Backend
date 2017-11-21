@@ -3,9 +3,9 @@
 
 
 
-    <navigate-bar @ManageType="changeManageType"></navigate-bar>
+    <!-- <navigate-bar @ManageType="changeManageType"></navigate-bar> -->
 
-    <!-- <navigate-bar-two></navigate-bar-two> -->
+    <navigate-bar-two></navigate-bar-two>
 
     <transition name="slide-fade">
     <manage-teaching v-if="ManageType=='ManageTeaching'"></manage-teaching>
@@ -13,7 +13,7 @@
     <manage-academy v-if="ManageType=='ManageAcademy'"></manage-academy>
     <manage-fee v-if="ManageType=='ManageFee'"></manage-fee>
     <manage-search-info v-if="ManageType=='ManageSearchInfo'"></manage-search-info>
-    </transition>  
+    </transition>
 
     
     <div class="Breadcrumb">

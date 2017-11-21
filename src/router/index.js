@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Counter from '@/components/Counter'
 import News from '@/views/demo'
 import TeacherDefault from '@/views/Teacher/TeacherDefault'
+import NewsList from '@/views/NewsList'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/teacher-default',
       name: 'TeacherDefault',
       component: TeacherDefault
+    },
+    {
+      path: '/newslist',
+      name: 'NewsList',
+      component: NewsList
     }
   ]
 })
