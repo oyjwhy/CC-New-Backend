@@ -1,16 +1,14 @@
 <template>
   <div>
-    <el-card class="box-card">
-      <div slot="header" class="clearfix">
-        <span style="font-size: 20px;">教师教学</span>
+    <el-card class="box-card-teaching">
+      <div slot="header" class="clearfix-teaching">
+        <span style="font-size: 20px; font-weight: bold;">教师教学</span>
       </div>
-      <el-row :gutter="10" class="default">
-        <el-col :sm="6" :md="4" :lg="3"><div class="tag-style"><el-tag>教学中心</el-tag></div></el-col>
-        <el-col :sm="6" :md="4" :lg="3"><div class="tag-style"><el-tag>教学实习签字</el-tag></div></el-col>
-        <el-col :sm="6" :md="4" :lg="3"><div class="tag-style"><el-tag>教学情况查询</el-tag></div></el-col>
-        <el-col :sm="6" :md="4" :lg="3"><div class="tag-style"><el-tag>教学工作量</el-tag></div></el-col>
-        <el-col :sm="6" :md="4" :lg="3"><div class="tag-style"><el-tag>本科毕设</el-tag></div></el-col>
-      </el-row>
+
+      <el-button size="small" style="margin-bottom: 12px " plain v-for="item in ManageTeachingTags" :key="item.message">{{item.message}}</el-button>
+      <!-- <el-row :gutter="4" class="default">
+        <el-col :sm="6" :md="4" :lg="3" v-for="item in ManageTeachingTags" :key="item.message"><el-button size="small" style="margin-bottom: 12px " plain>{{item.message}}</el-button></el-col>
+      </el-row> -->
     </el-card>
   </div>
 </template>
@@ -19,7 +17,15 @@
 export default {
   name: 'ManageTeaching',
   data () {
-    return {}
+    return {
+      ManageTeachingTags: [
+        {message: '教学中心'},
+        {message: '教学实习签字'},
+        {message: '教学情况查询'},
+        {message: '教学工作量'},
+        {message: '本科毕设'}
+      ]
+    }
   },
   methods: {}
 }
@@ -62,5 +68,11 @@ export default {
 .tag-style:hover {
   cursor:pointer;
   font-weight: bold;
+}
+.box-card-teaching {
+  margin-bottom: 20px;
+}
+.clearfix-teaching {
+  height: 16px;
 }
 </style>

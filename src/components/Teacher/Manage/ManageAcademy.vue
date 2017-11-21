@@ -1,10 +1,15 @@
 <template>
   <div>
-    <el-card class="box-card">
-      <div slot="header" class="clearfix">
-        <span style="font-size: 20px;">学院管理</span>
+    <el-card class="box-card-academy">
+      <div slot="header" class="clearfix-academy">
+        <span style="font-size: 20px; font-weight: bold">学院管理</span>
       </div>
-      <el-row :gutter="10" class="default">
+       <el-button size="small" style="margin-bottom: 12px " plain v-for="item in ManageAcademyTags" :key="item.message">{{item.message}}</el-button>
+     
+      <!-- <el-row :gutter="10" class="default">
+       <el-col :sm="6" :md="4" :lg="3" v-for="item in ManageAcademyTags" :key="item.message"><el-button size="small" style="margin-bottom: 12px " plain>{{item.message}}</el-button></el-col>
+        
+       
         <el-col :sm="6" :md="4" :lg="3"><div class="tag-style"><el-tag>部门信息管理</el-tag></div></el-col>
         <el-col :sm="6" :md="4" :lg="3"><div class="tag-style"><el-tag>专业信息管理</el-tag></div></el-col>
         <el-col :sm="6" :md="4" :lg="3"><div class="tag-style"><el-tag>专业班级管理</el-tag></div></el-col>
@@ -42,7 +47,7 @@
         <el-col :sm="6" :md="4" :lg="3"><div class="tag-style"><el-tag>MSE评审专家分配</el-tag></div></el-col>
         <el-col :sm="6" :md="4" :lg="3"><div class="tag-style"><el-tag>MSE系统参数设置</el-tag></div></el-col>
         <el-col :sm="6" :md="4" :lg="3"><div class="tag-style"><el-tag>学生学费管理</el-tag></div></el-col>
-     </el-row>
+     </el-row> -->
     </el-card>
   </div>
 </template>
@@ -50,7 +55,38 @@
 export default {
   name: 'ManageAcademy',
   data () {
-    return {}
+    return {
+      ManageAcademyTags: [
+        {message: '部门信息管理'},
+        {message: '专业信息管理'},
+        {message: '专业班级管理'},
+        {message: '课程信息管理'},
+        {message: '教学计划管理'},
+        {message: '开课'},
+        {message: '课程设置'},
+        {message: '选课设置'},
+        {message: '学生工作'},
+        {message: '教务答疑'},
+        {message: '教师管理'},
+        {message: '教师通讯录管理'},
+        {message: '学生管理'},
+        {message: '课程教学情况一览'},
+        {message: '本科毕设'},
+        {message: '综合课程设计2-2管理'},
+        {message: '研究生毕设'},
+        {message: '教师指导研究生情况'},
+        {message: '教师教授本科生情况'},
+        {message: '本科生教学工作量管理'},
+        {message: '研究生教学工作量管理'},
+        {message: '项目管理'},
+        {message: '科研成果管理'},
+        {message: '行政工作量管理'},
+        {message: '竞赛管理'},
+        {message: '奖金工作量管理'},
+        {message: '推免生管理'},
+        {message: '学生学费管理'}
+      ]
+    }
   },
   methods: {}
 }
@@ -93,5 +129,11 @@ export default {
 .tag-style:hover {
   cursor:pointer;
   font-weight: bold;
+}
+.box-card-academy {
+  margin-bottom: 20px;
+}
+.clearfix-academy  {
+  height: 16px;
 }
 </style>

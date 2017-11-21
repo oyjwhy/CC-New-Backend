@@ -1,7 +1,11 @@
 <template>
   <div class="TeacherDefault">
 
-    <navigate-bar></navigate-bar>
+
+
+    <navigate-bar @ManageType="changeManageType"></navigate-bar>
+
+    <!-- <navigate-bar-two></navigate-bar-two> -->
 
     <transition name="slide-fade">
     <manage-teaching v-if="ManageType=='ManageTeaching'"></manage-teaching>
@@ -9,26 +13,16 @@
     <manage-academy v-if="ManageType=='ManageAcademy'"></manage-academy>
     <manage-fee v-if="ManageType=='ManageFee'"></manage-fee>
     <manage-search-info v-if="ManageType=='ManageSearchInfo'"></manage-search-info>
-    </transition>
+    </transition>  
+
+    
     <div class="Breadcrumb">
       <el-breadcrumb style="font-size: 15px;margin-top:10px" separator-class="el-icon-arrow-right">
         <el-breadcrumb-item>首页</el-breadcrumb-item>
         <el-breadcrumb-item>活动管理</el-breadcrumb-item>
         <el-breadcrumb-item>活动列表</el-breadcrumb-item>
         <el-breadcrumb-item>活动详情</el-breadcrumb-item>
-
       </el-breadcrumb>
-
-      <el-button @click="changeManageType('Manage')">1</el-button>
-      <el-button @click="changeManageType('ManageTeaching')">2</el-button>
-      <el-button @click="changeManageType('ManageStudy')">3</el-button>
-      <el-button @click="changeManageType('ManageAcademy')">4</el-button>
-      <el-button @click="changeManageType('ManageFee')">5</el-button>
-      <el-button @click="changeManageType('ManageSearchInfo')">6</el-button>
-      <el-button @click="changeManageType('ManageTeaching')">7</el-button>
-      <el-button @click="changeManageType('ManageStudy')">8</el-button>
-      <el-button @click="changeManageType('ManageStudy')">9</el-button>
-
     </div>
 
 
@@ -150,6 +144,7 @@
 
 
 <script>
+import NavigateBarTwo from '@/components/NavigateBarTwo'
 
 import NavigateBar from '@/components/NavigateBar'
 import ManagePanel from '@/components/Teacher/Manage/ManagePanel'
@@ -284,7 +279,8 @@ export default {
     ManageStudy,
     ManageAcademy,
     ManageFee,
-    ManageSearchInfo
+    ManageSearchInfo,
+    NavigateBarTwo
   },
   methods: {
     changeManageType (Type) {

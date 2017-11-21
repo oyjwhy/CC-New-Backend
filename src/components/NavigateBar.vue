@@ -22,20 +22,21 @@
               <td><el-button style="margin-left:10px" size="small" round><i class="el-icon-d-arrow-right"></i>系统注销</el-button></td>
             </tr>
           </table> -->
+
       <el-row :gutter="100">
-        <el-col :span="2" style="margin-right:24px" ><el-button type="primary" plain><strong>{{ TeacherName }}</strong></span></el-button></el-col>
-        <el-col :span="2"><el-button size="middle" round><i class="el-icon-d-arrow-right"></i>系统首页</el-button></el-col>
-        <el-col :span="2"><el-button size="middle" round><i class="el-icon-d-arrow-right"></i>教师教学</el-button></el-col>
-        <el-col :span="2"><el-button size="middle" round><i class="el-icon-d-arrow-right"></i>学生学习</el-button></el-col>
-        <el-col :span="2"><el-button size="middle" round><i class="el-icon-d-arrow-right"></i>学院管理</el-button></el-col>  
-        <el-col :span="2"><el-button size="middle" round><i class="el-icon-d-arrow-right"></i>财务管理</el-button></el-col>
-        <el-col :span="2"><el-button size="middle" round><i class="el-icon-d-arrow-right"></i>信息查询</el-button></el-col>
-        <el-col :span="2"><el-button size="middle" round><i class="el-icon-d-arrow-right"></i>课程辅导</el-button></el-col>
-        <el-col :span="2"><el-button size="middle" round><i class="el-icon-d-arrow-right"></i>系统维护</el-button></el-col>
-        <el-col :span="2"><el-button size="middle" round><i class="el-icon-d-arrow-right"></i>新闻中心</el-button></el-col>
-        <el-col :span="2"><el-button size="middle" round><i class="el-icon-d-arrow-right"></i>系统注销</el-button></el-col>
+        <el-col :span="2" style="margin-right:24px" ><el-button type="primary" plain size="medium"><strong>{{ TeacherName }}</strong></span></el-button></el-col>
+        <el-col :span="2"><el-button size="medium" round @click="changeManageType('Manage')"><i class="el-icon-d-arrow-right"></i>系统首页</el-button></el-col>
+        <el-col :span="2"><el-button size="medium" round @click="changeManageType('ManageTeaching')"><i class="el-icon-d-arrow-right"></i>教师教学</el-button></el-col>
+        <el-col :span="2"><el-button size="medium" round @click="changeManageType('ManageStudy')"><i class="el-icon-d-arrow-right"></i>学生学习</el-button></el-col>
+        <el-col :span="2"><el-button size="medium" round @click="changeManageType('ManageAcademy')"><i class="el-icon-d-arrow-right"></i>学院管理</el-button></el-col>  
+        <el-col :span="2"><el-button size="medium" round @click="changeManageType('ManageFee')"><i class="el-icon-d-arrow-right"></i>财务管理</el-button></el-col>
+        <el-col :span="2"><el-button size="medium" round @click="changeManageType('ManageSearchInfo')"><i class="el-icon-d-arrow-right"></i>信息查询</el-button></el-col>
+        <el-col :span="2"><el-button size="medium" round @click="changeManageType('ManageTeaching')"><i class="el-icon-d-arrow-right"></i>课程辅导</el-button></el-col>
+        <el-col :span="2"><el-button size="medium" round @click="changeManageType('ManageTeaching')"><i class="el-icon-d-arrow-right"></i>系统维护</el-button></el-col>
+        <el-col :span="2"><el-button size="medium" round @click="changeManageType('ManageTeaching')"><i class="el-icon-d-arrow-right"></i>新闻中心</el-button></el-col>
+        <el-col :span="2"><el-button size="medium" round @click="changeManageType('ManageTeaching')"><i class="el-icon-d-arrow-right"></i>系统注销</el-button></el-col>
       </el-row>
-    </div>
+   </div>
   </div>
 </template>
 
@@ -48,6 +49,9 @@ export default {
     }
   },
   methods: {
+    changeManageType (Type) {
+      this.$emit('ManageType', Type)
+    }
   }
 }
 </script>
