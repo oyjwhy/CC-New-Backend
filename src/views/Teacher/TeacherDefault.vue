@@ -38,13 +38,14 @@
       </div>
       <el-table
         :data="tableDataCourse"
+        v-loading="loading"
         style="width: 100%">
         <el-table-column
           label="课程名称"
           align="center"
           width="240">
           <template slot-scope="scope">
-            <a href="#" class="course-name" style="color:red">{{scope.row.CourseName}}</a><br>
+            <a href="#" class="course-name" style="color:	#F08080">{{scope.row.CourseName}}</a><br>
             <a href="#" class="course-name">{{scope.row.TeacherName}}</a>
           </template>
         </el-table-column>
@@ -63,7 +64,7 @@
               type="text">
               查看
             </el-button>
-          </template>
+          </template>~
         </el-table-column>
         <el-table-column
           label="讲稿"
@@ -116,7 +117,7 @@
         </el-table-column>
         <el-table-column
           prop="StudentGrade"
-          label="年纪"
+          label="年级"
           align="center">
         </el-table-column>
         <el-table-column
@@ -302,14 +303,7 @@ export default {
   margin-top: 20px;
   text-align: center;
 }
-.icon-style {
-  font-size: 45px;
-  color: rgba(209,95,238, 0.5);
-}
-.icon-style:hover {
-  font-size: 50px;
-  color: rgb(209,95,238);
-}
+
 .separate-line {
   height: 4px;
   background-color:	#63B8FF;

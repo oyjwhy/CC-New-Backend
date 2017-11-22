@@ -25,5 +25,6 @@ export default {
   text-align: center;
   color: rgb(220, 220, 220);
   font-size: 15px;
+  font-family: '微软雅黑';
 }
 </style>
