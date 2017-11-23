@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <page-header></page-header>
     <router-view/>
     <page-footer></page-footer>
   </div>
@@ -7,11 +8,12 @@
 
 <script>
 import PageFooter from '@/components/PageFooter'
-
+import PageHeader from '@/components/PageHeader'
 export default {
   name: 'app',
   components: {
-    PageFooter
+    PageFooter,
+    PageHeader
   }
 }
 </script>
@@ -25,5 +27,35 @@ export default {
   color: #2c3e50;
   width: 70%;
   margin: auto auto 0 auto;
+}
+
+/* 手机 */
+@media (max-width: 319px){ 
+  #app {
+    width: 100%;
+  }
+}
+
+/* 小屏幕（平板，大于等于 768px） */
+@media (min-width: 320px) and (max-width: 991px) { 
+  #app {
+    width: 95%;
+  }
+}
+
+/* 中等屏幕（桌面显示器，大于等于 992px） */
+@media (min-width: 992px) and (max-width: 1309px) { 
+    #app {
+    width: 90%;
+  }
+}
+
+
+
+/* 大屏幕（大桌面显示器，大于等于 1200px） */
+@media (min-width: 1310px) and (max-width: 1600px) { 
+    #app {
+    width: 85%;
+  }
 }
 </style>

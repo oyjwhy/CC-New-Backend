@@ -1,6 +1,6 @@
 <template>
   <div>
-    <navigate-bar-two></navigate-bar-two>
+    <navigate-bar></navigate-bar>
     <div class="separate-line"></div>
 
     <el-card class="box-card">
@@ -57,7 +57,7 @@
 
 <script>
 
-import NavigateBarTwo from '@/components/NavigateBarTwo'
+import NavigateBar from '@/components/teacher/NavigateBar'
 
 export default {
   name: 'NewsList',
@@ -132,7 +132,7 @@ export default {
   },
   methods: {},
   components: {
-    NavigateBarTwo
+    NavigateBar
   }
 }
 </script>

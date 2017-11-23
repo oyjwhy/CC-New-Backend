@@ -1,23 +1,11 @@
 <template>
-  <div class="TeacherDefault">
+  <div class="teacher-default">
 
 
+    <navigate-bar></navigate-bar>
 
-    <!-- <navigate-bar @ManageType="changeManageType"></navigate-bar> -->
-
-    <navigate-bar-two></navigate-bar-two>
-
-    <transition name="slide-fade">
-    <manage-teaching v-if="ManageType=='ManageTeaching'"></manage-teaching>
-    <manage-study v-if="ManageType=='ManageStudy'"></manage-study>
-    <manage-academy v-if="ManageType=='ManageAcademy'"></manage-academy>
-    <manage-fee v-if="ManageType=='ManageFee'"></manage-fee>
-    <manage-search-info v-if="ManageType=='ManageSearchInfo'"></manage-search-info>
-    </transition>
-
-    
-    <div class="Breadcrumb">
-      <el-breadcrumb style="font-size: 15px;margin-top:10px" separator-class="el-icon-arrow-right">
+    <div class="bread-crumb-separate-line">
+      <el-breadcrumb style="font-size:17px; margin-top:10px; margin-left:10px" separator-class="el-icon-arrow-right">
         <el-breadcrumb-item>首页</el-breadcrumb-item>
         <el-breadcrumb-item>活动管理</el-breadcrumb-item>
         <el-breadcrumb-item>活动列表</el-breadcrumb-item>
@@ -28,8 +16,6 @@
 
     <manage-panel></manage-panel>
 
-
-
     <div class="separate-line"></div>
 
     <el-card class="box-card">
@@ -39,7 +25,8 @@
       <el-table
         :data="tableDataCourse"
         v-loading="loading"
-        style="width: 100%">
+        style="width: 100%"
+        header-row-style="font-size:17px; color: #424242">
         <el-table-column
           label="课程名称"
           align="center"
@@ -80,7 +67,7 @@
           align="center"
           min-width="500">
           <template slot-scope="scope">
-            <span class="HomeWordFont">{{scope.row.HomeWorks}}</span>
+            <span class="homework-font">{{scope.row.HomeWorks}}</span>
             <span v-for="item in scope.row.HomeWorkList">
               <div class="table-line"></div>{{item.message}}
             </span>
@@ -88,7 +75,6 @@
         </el-table-column>
       </el-table>
     </el-card>
-
 
     <div class="separate-line"></div>
 
@@ -99,7 +85,8 @@
       <el-table
         :data="tableDataStudent"
         stripe
-        style="width: 100%">
+        style="width: 100%"
+        header-row-style="font-size:17px; color: #424242">
         <el-table-column
           prop="StudentNo"
           label="学号"
@@ -145,15 +132,8 @@
 
 
 <script>
-import NavigateBarTwo from '@/components/NavigateBarTwo'
-
-import NavigateBar from '@/components/NavigateBar'
-import ManagePanel from '@/components/Teacher/Manage/ManagePanel'
-import ManageTeaching from '@/components/Teacher/Manage/ManageTeaching'
-import ManageStudy from '@/components/Teacher/Manage/ManageStudy'
-import ManageAcademy from '@/components/Teacher/Manage/ManageAcademy'
-import ManageFee from '@/components/Teacher/Manage/ManageFee'
-import ManageSearchInfo from '@/components/Teacher/Manage/ManageSearchInfo'
+import NavigateBar from '@/components/teacher/NavigateBar'
+import ManagePanel from '@/components/teacher/ManagePanel'
 
 export default {
   name: 'TeacherDefault',
@@ -274,34 +254,21 @@ export default {
     }
   },
   components: {
-    NavigateBar,
     ManagePanel,
-    ManageTeaching,
-    ManageStudy,
-    ManageAcademy,
-    ManageFee,
-    ManageSearchInfo,
-    NavigateBarTwo
+    NavigateBar
   },
   methods: {
-    changeManageType (Type) {
-      this.ManageType = Type
-    }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-.Breadcrumb {
+.bread-crumb-separate-line {
   border-top: 2px solid #87ceeb;
   border-bottom: 2px solid #87ceeb;
   height: 40px;
   line-height: 40px;
-}
-.default {
-  margin-top: 20px;
-  text-align: center;
 }
 
 .separate-line {
@@ -328,36 +295,16 @@ export default {
   height: 1px;
   background-color: rgba(176, 196, 222, 0.5);
 }
-.HomeWordFont {
+.homework-font {
   /* color: #696969; */
   color: black;
   font-size: 15px;
   opacity: 0.8;
 }
-.HomeWordFont:hover {
+.homework-font:hover {
   cursor:pointer;
   font-weight: bold;
   color: #4F4F4F;
-  font-size: 16px;
-}
-.fade-enter-active {
-  transition: opacity 1s
-}
-.fade-leave-active {
-  transition: opacity 0
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active in below version 2.1.8 */ {
-  opacity: 0
-}
-.slide-fade-enter-active {
-  transition: all 1s ease;
-}
-.slide-fade-leave-active {
-  transition: all 0s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-}
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active for below version 2.1.8 */ {
-  transform: translateX(120px);
-  opacity: 0;
+  font-size: 15px;
 }
 </style>
