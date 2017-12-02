@@ -5,12 +5,13 @@
     <navigate-bar></navigate-bar>
 
     <div class="bread-crumb-separate-line">
-      <el-breadcrumb style="font-size:17px; margin-top:10px; margin-left:10px" separator-class="el-icon-arrow-right">
+      <el-breadcrumb style="font-size:17px; margin-top:10px; margin-left:10px; width:80%; margin-right:0;" separator-class="el-icon-arrow-right">
         <el-breadcrumb-item>首页</el-breadcrumb-item>
         <el-breadcrumb-item>活动管理</el-breadcrumb-item>
         <el-breadcrumb-item>活动列表</el-breadcrumb-item>
         <el-breadcrumb-item>活动详情</el-breadcrumb-item>
       </el-breadcrumb>
+
     </div>
 
 

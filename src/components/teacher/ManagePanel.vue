@@ -70,14 +70,21 @@ export default {
 .grid-content {
   cursor:pointer;
   border-radius: 5px;
+  box-shadow: 4px 4px 4px #EAEAEA;
   min-height: 100px;
   margin-bottom: 20px;
 }
 .grid-content:hover{
   transition: all, .3s;
   cursor:pointer;
+  box-shadow: 4px 4px 12px #888888;
   background: rgba(135, 206, 235, 0.7);
   font-weight: bold;
+}
+
+.grid-content:active{
+  box-shadow: 4px 4px 4px #EAEAEA;
+  background: rgba(135, 206, 235, 0.5);
 }
 
 .grid-content:hover .panel-icon-style{

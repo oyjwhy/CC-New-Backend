@@ -208,7 +208,7 @@ export default {
   font-weight: bold;
 }
 
-/* 手机（平板，大于等于 768px） */
+/* 手机（小于等于 768px） */
 @media (max-width: 768px) { 
   .el-button--primary.is-plain {
     width: 9%;
